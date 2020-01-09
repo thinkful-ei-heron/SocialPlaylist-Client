@@ -6,12 +6,6 @@ class LandingPage extends Component {
     render() {
         return (
             <>
-            <nav role='navigation'>
-                <ul className='nav-link'>
-                    <li><a href='/login' className='nav-login'>Log in</a></li> 
-                    <li><a href='/register' className='nav-signup'>Sign up</a></li>
-                </ul>
-            </nav>
             <div className='title'>
                 <h1>Social Playlist</h1>
             </div>
