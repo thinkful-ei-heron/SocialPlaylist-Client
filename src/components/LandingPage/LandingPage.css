@@ -1,7 +1,13 @@
+.landingPage {
+  max-width: 800px;
+}
+
 li {
-    list-style: none;
+  list-style: none;
 }
 
 @media only screen and (max-width: 600px) {
-    .loginForm { display: none; }
+  .loginForm {
+    display: none;
+  }
 }
