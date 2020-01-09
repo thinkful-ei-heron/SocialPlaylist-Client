@@ -1,8 +1,48 @@
 import React, { Component } from "react";
 import './LandingPage.css';
-import LoginForm from '../../components/LoginForm/LoginForm';
+import { Redirect } from "react-router-dom";
+// import LoginForm from '../../components/LoginForm/LoginForm';
 
 class LandingPage extends Component {
+    constructor() {
+        super();
+        this.state = {
+          width: window.innerWidth,
+        };
+      }
+
+      componentWillMount() {
+        window.addEventListener('resize', this.handleWindowSizeChange);
+      }
+      
+      // make sure to remove the listener
+      // when the component is not mounted anymore
+      componentWillUnmount() {
+        window.removeEventListener('resize', this.handleWindowSizeChange);
+      }
+      
+      handleWindowSizeChange = () => {
+        this.setState({ width: window.innerWidth });
+      };
+
+    renderLoginForm() {
+        const { width } = this.state;
+        const isMobile = width <= 500;
+
+        if(isMobile){
+            return (
+                    <div className='mobile-view'>
+                        <a href='/login' className='nav-login'>Log in</a>
+                        <a href='/register' className='nav-signup'>Sign up</a>
+                    </div>
+            )  
+        } else {
+            return (
+                <Redirect to={"/login"} />
+            )
+        }
+    }
+
     render() {
         return (
             <>
@@ -17,11 +57,9 @@ class LandingPage extends Component {
                    Create your own playlist and share with your followers.  
                </p>
               <p>placeholder for screenshots of app</p>
-            
-            <LoginForm />
-              
+              <div>{this.renderLoginForm()}</div>
            </section>
-          
+                
             </>
             )
         }
