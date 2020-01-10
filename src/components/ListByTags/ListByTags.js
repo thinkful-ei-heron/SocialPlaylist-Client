@@ -74,7 +74,7 @@ export class ListByTags extends Component {
   render() {
     console.log('props in the ListBy Tags component',this.props)
     return (
-      <div>
+      <div className='filterListContainer'>
         <form onSubmit={this.handleFilter}>
           <button type="submit">Filter</button>
           <input type="text" placeholder="#abc#123" className="filter"></input>

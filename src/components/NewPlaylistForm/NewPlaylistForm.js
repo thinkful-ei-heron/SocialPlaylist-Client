@@ -145,7 +145,7 @@ class NewPlaylistForm extends Component {
     return (
       <form onSubmit={this.handleSubmit} className="newPlaylistForm">
         <div className="role" role="alert">{error && <p>{error}</p>}</div>
-        <div>
+        <div className='newPlaylistNameContainer'>
           <Label htmlFor="newPlaylist-name-input">
             Name your playlist
             <Required />
@@ -159,7 +159,7 @@ class NewPlaylistForm extends Component {
             required
           />
         </div>
-        <div>
+        <div className='locationCityContainer'>
           <Label htmlFor="newPlaylist-locationCity-input">
             City
             <Required />
@@ -172,7 +172,7 @@ class NewPlaylistForm extends Component {
             required
           />
         </div>
-        <div>
+        <div className='stateContainer'>
           <Label htmlFor="registration-state-input">
             State
             <Required />
@@ -182,7 +182,7 @@ class NewPlaylistForm extends Component {
             {this.renderOptions()}
           </select>
         </div>
-        <div>
+        <div className='tagsContainer'>
           <Label htmlFor="newPlaylist-tags-input">
             Tags for your list
             <Required />
@@ -195,7 +195,7 @@ class NewPlaylistForm extends Component {
             placeholder="#datenight #hotnewspots"
           />
         </div>
-        <div>
+        <div className='publicInputContainer'>
           <Label htmlFor="newPlaylist-public-input">
             Would you like to make this list private?
             <Required />
