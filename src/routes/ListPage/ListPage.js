@@ -42,12 +42,7 @@ export class ListPage extends Component {
 
   render() {
     return (
-<<<<<<< HEAD
-      <div className='listPage'>
-        <h1>My List</h1>
-=======
       <div>
->>>>>>> origin
         {this.renderMap()}
         <h4 className='myListName'>List Name</h4>
         {this.renderSpot(this.state.spots)}
