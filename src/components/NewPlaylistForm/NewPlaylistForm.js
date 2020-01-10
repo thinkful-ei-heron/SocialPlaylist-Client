@@ -144,7 +144,7 @@ class NewPlaylistForm extends Component {
     const { error } = this.state;
     return (
       <form onSubmit={this.handleSubmit} className="newPlaylistForm">
-        <div role="alert">{error && <p>{error}</p>}</div>
+        <div className="role" role="alert">{error && <p>{error}</p>}</div>
         <div>
           <Label htmlFor="newPlaylist-name-input">
             Name your playlist

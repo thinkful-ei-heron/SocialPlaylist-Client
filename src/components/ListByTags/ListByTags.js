@@ -77,7 +77,7 @@ export class ListByTags extends Component {
       <div>
         <form onSubmit={this.handleFilter}>
           <button type="submit">Filter</button>
-          <input type="text" placeholder="#abc#123" name="filter"></input>
+          <input type="text" placeholder="#abc#123" className="filter"></input>
         </form>
         <h4>Browse Lists</h4>
         {this.renderFilteredList()}

@@ -121,7 +121,7 @@ class RegistrationForm extends Component {
     return (
       <form onSubmit={this.handleSubmit} className="registerForm">
         <div role="alert">{error && <p>{error}</p>}</div>
-        <div>
+        <div className='nameInputContainer'>
           <Label htmlFor="registration-name-input">
             Enter your name
             <Required />
@@ -133,14 +133,14 @@ class RegistrationForm extends Component {
             required
           />
         </div>
-        <div>
+        <div className='usernameInputContainer'>
           <Label htmlFor="registration-username-input">
             Choose a username
             <Required />
           </Label>
           <Input id="registration-username-input" name="username" required />
         </div>
-        <div>
+        <div className='cityContainer'>
           <Label htmlFor="registration-locationCity-input">
             City
             <Required />
