@@ -12,10 +12,7 @@ export class ListByTags extends Component {
     filter: "",
     filteredList: []
   };
-  //Currently it's able to filter the lists.
-  //TODO add more to get a better sample group
-  // add functionality to search by more than 1 filter accounting for spaces or no spaces
-  // setup a render to show the filtered lists and not show the all lists.
+  
   handleFilter = ev => {
     ev.preventDefault();
     let filter = ev.target.filter.value;
@@ -51,7 +48,7 @@ export class ListByTags extends Component {
         return this.props.lists.map(list => {
             return (
                 <div key={Math.random()}>
-                  <Link to={`/list/${this.props.lists[0].id}`}>
+                  <Link to={`/list/${list.id}`}>
                       <h4>{list.name}</h4>
                       <p>{list.tags}</p>
                   </Link>
@@ -62,7 +59,7 @@ export class ListByTags extends Component {
         return this.state.filteredList.map(list => {
             return (
                 <div key={Math.random()}>
-                  <Link to={`/list/${this.props.lists[0].id}`}>
+                  <Link to={`/list/${list.id}`}>
                     <h4>{list.name}</h4>
                     <p>{list.tags}</p>
                   </Link>
