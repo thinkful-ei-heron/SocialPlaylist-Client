@@ -72,12 +72,6 @@ export class ListByTags extends Component {
   render() {
     console.log("props in the ListBy Tags component", this.props);
     return (
-<<<<<<< HEAD
-      <div className='filterListContainer'>
-        <form onSubmit={this.handleFilter}>
-          <button type="submit">Filter</button>
-          <input type="text" placeholder="#abc#123" className="filter"></input>
-=======
       <div>
         <form onSubmit={this.handleFilter} id="filterForm">
           <h4 className="filterFormTitle">Browse All Lists</h4>
@@ -92,7 +86,6 @@ export class ListByTags extends Component {
             className="filterField"
           ></input>
           </div>
->>>>>>> origin
         </form>
         <div className='filteredContainer'>{this.renderFilteredList()}</div>
       </div>
