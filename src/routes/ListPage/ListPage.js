@@ -3,6 +3,8 @@ import ListsApiService from "../../services/lists-api-service";
 import PlayListContext from "../../contexts/PlayListContext";
 import Spot from "../../components/Spot/Spot";
 import Map from "../../components/Map/Map";
+import { Link } from "react-router-dom";
+import Button from "../../components/Button/Button";
 import "./listPage.css";
 
 export class ListPage extends Component {
@@ -46,7 +48,11 @@ export class ListPage extends Component {
         {this.renderMap()}
         <h4 className='myListName'>List Name</h4>
         {this.renderSpot(this.state.spots)}
+        <Button>
+          <Link to="/newSpot">New Spot</Link>
+        </Button>
       </div>
+      
     );
   }
 }

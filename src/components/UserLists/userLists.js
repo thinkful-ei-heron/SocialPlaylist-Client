@@ -19,6 +19,7 @@ export class UserLists extends Component {
   };
 
   renderUserList() {
+    console.log('userList in props',this.props)
     if (this.props.userList) {
       return (
         <div className="display-user">
@@ -34,43 +35,6 @@ export class UserLists extends Component {
                 </div>
               );
             })}
-            {this.props.userList.map((item, idx) => {
-              // This will likely need to be
-              return (
-                <div className='listItem'>
-                <p key={idx} onClick={this.handleClickList}>
-                  <Link to={`/list/${item.id}`}>
-                    {item.name}
-                  </Link>
-                </p>
-                </div>
-              );
-            })}
-            {this.props.userList.map((item, idx) => {
-              // This will likely need to be
-              return (
-                <div className='listItem'>
-                <p key={idx} onClick={this.handleClickList}>
-                  <Link to={`/list/${item.id}`}>
-                    {item.name}
-                  </Link>
-                </p>
-                </div>
-              );
-            })}
-            {this.props.userList.map((item, idx) => {
-              // This will likely need to be
-              return (
-                <div className='listItem'>
-                <p key={idx} onClick={this.handleClickList}>
-                  <Link to={`/list/${item.id}`}>
-                    {item.name}
-                  </Link>
-                </p>
-                </div>
-              );
-            })}
-
         </div>
       );
     }
@@ -84,13 +48,8 @@ export class UserLists extends Component {
           <h2 className='myList-title'>My Lists</h2>
           {this.renderUserList()}
           <button id='newPlaylistButton'>
-            <Link to="/newList">New Play List</Link>
+            <Link to="/newList" className='newPlaylistButtonText'>New Play List</Link>
           </button>
-          {/* <Link to = {'/userlist'} >
-                    <Button>
-                        Click Me
-                    </Button>
-                </Link> */}
         </section>
       </>
     );
