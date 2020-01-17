@@ -116,6 +116,7 @@ class RegistrationForm extends Component {
     return (
       <form onSubmit={this.handleSubmit} className="registerForm">
         <div role="alert">{error && <p>{error}</p>}</div>
+<<<<<<< HEAD
         <div>
           <TextInput
             label="Enter your name"
@@ -145,6 +146,36 @@ class RegistrationForm extends Component {
             name="locationState"
             id="registration-location-state-select"
             options={this.renderOptions()}
+=======
+        <div className='nameInputContainer'>
+          <Label htmlFor="registration-name-input">
+            Enter your name
+            <Required />
+          </Label>
+          <Input
+            ref={this.firstInput}
+            id="registration-name-input"
+            name="name"
+            required
+          />
+        </div>
+        <div className='usernameInputContainer'>
+          <Label htmlFor="registration-username-input">
+            Choose a username
+            <Required />
+          </Label>
+          <Input id="registration-username-input" name="username" required />
+        </div>
+        <div className='cityContainer'>
+          <Label htmlFor="registration-locationCity-input">
+            City
+            <Required />
+          </Label>
+          <Input
+            id="registration-locationCity-input"
+            name="locationCity"
+            required
+>>>>>>> 455105f368e7806d159b2879778d2326dcb04428
           />
         </div>
         <div>

@@ -141,8 +141,8 @@ class NewPlaylistForm extends Component {
     const { error } = this.state;
     return (
       <form onSubmit={this.handleSubmit} className="newPlaylistForm">
-        <div role="alert">{error && <p>{error}</p>}</div>
-        <div>
+        <div className="role" role="alert">{error && <p>{error}</p>}</div>
+        <div className='newPlaylistNameContainer'>
           <Label htmlFor="newPlaylist-name-input">
             Name your playlist
             <Required />
@@ -160,6 +160,7 @@ class NewPlaylistForm extends Component {
             }}
           />
         </div>
+<<<<<<< HEAD
         <div>
           <TextInput
             attr={{
@@ -197,9 +198,45 @@ class NewPlaylistForm extends Component {
               //value: this.state.value,
               //onChange: this.handleChange
             }}
+=======
+        <div className='locationCityContainer'>
+          <Label htmlFor="newPlaylist-locationCity-input">
+            City
+            <Required />
+          </Label>
+          <Input
+            id="newPlaylist-city-input"
+            name="city"
+            value={this.state.value}
+            onChange={this.handleChange}
+            required
           />
         </div>
-        <div>
+        <div className='stateContainer'>
+          <Label htmlFor="registration-state-input">
+            State
+            <Required />
+          </Label>
+          <select className="state" name="state" onChange={this.handleChange}>
+            <option key="none" defaultValue={this.state.value}></option>
+            {this.renderOptions()}
+          </select>
+        </div>
+        <div className='tagsContainer'>
+          <Label htmlFor="newPlaylist-tags-input">
+            Tags for your list
+            <Required />
+          </Label>
+          <Input
+            id="newPlaylist-tags-input"
+            name="tags"
+            value={this.state.value}
+            onChange={this.handleChange}
+            placeholder="#datenight #hotnewspots"
+>>>>>>> 455105f368e7806d159b2879778d2326dcb04428
+          />
+        </div>
+        <div className='publicInputContainer'>
           <Label htmlFor="newPlaylist-public-input">
             Make this list private?
             <Required />

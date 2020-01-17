@@ -66,6 +66,10 @@ class LandingPage extends Component {
             playlists. Like a playlist of the city. Create your own playlist and
             share with your followers.
           </p>
+<<<<<<< HEAD
+          {/* <p>placeholder for screenshots of app</p> */}
+=======
+>>>>>>> bfbdd4604c239e8cb85291c52a93bfd4f279c2b0
           <div>{this.renderLoginForm()}</div>
         </section>
       </>
