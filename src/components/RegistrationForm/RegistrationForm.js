@@ -116,37 +116,6 @@ class RegistrationForm extends Component {
     return (
       <form onSubmit={this.handleSubmit} className="registerForm">
         <div role="alert">{error && <p>{error}</p>}</div>
-<<<<<<< HEAD
-        <div>
-          <TextInput
-            label="Enter your name"
-            attr={{
-              id: 'registration-name-input',
-              name: 'name',
-              required: true,
-              type: 'text'
-            }}
-          />
-        </div>
-        <div>
-          <TextInput
-            label="Choose a username"
-            attr={{
-              id: 'registration-username-input',
-              name: 'username',
-              required: true,
-              type: 'text'
-            }}
-          />
-        </div>
-        <div className="state-container">
-          <Select
-            helperText="Please Choose a State"
-            className="location-state"
-            name="locationState"
-            id="registration-location-state-select"
-            options={this.renderOptions()}
-=======
         <div className='nameInputContainer'>
           <Label htmlFor="registration-name-input">
             Enter your name
@@ -175,7 +144,6 @@ class RegistrationForm extends Component {
             id="registration-locationCity-input"
             name="locationCity"
             required
->>>>>>> 455105f368e7806d159b2879778d2326dcb04428
           />
         </div>
         <div>

@@ -160,45 +160,6 @@ class NewPlaylistForm extends Component {
             }}
           />
         </div>
-<<<<<<< HEAD
-        <div>
-          <TextInput
-            attr={{
-              id: "newPlaylist-city-input",
-              //ref: this.firstInput,
-              name: "city",
-              required: true,
-              type: "text",
-              label: "City",
-              //value: this.state.value,
-             // onChange: this.handleChange
-            }}
-          />
-        </div>
-        <div className="stateContainer">
-          <Select
-            id="newPlaylist-state-input"
-            //ref={this.firstInput}
-            label="State"
-            name="state"
-            //onChange={this.handleChange}
-            options={this.stateAbr}
-            //value={this.state.value}
-          ></Select>
-        </div>
-        <div>
-          <TextInput
-            attr={{
-              id: "newPlaylist-tags-input",
-              //ref: this.firstInput,
-              name: "tags",
-              required: true,
-              type: "text",
-              label: "Tags",
-              //value: this.state.value,
-              //onChange: this.handleChange
-            }}
-=======
         <div className='locationCityContainer'>
           <Label htmlFor="newPlaylist-locationCity-input">
             City
@@ -233,7 +194,6 @@ class NewPlaylistForm extends Component {
             value={this.state.value}
             onChange={this.handleChange}
             placeholder="#datenight #hotnewspots"
->>>>>>> 455105f368e7806d159b2879778d2326dcb04428
           />
         </div>
         <div className='publicInputContainer'>
