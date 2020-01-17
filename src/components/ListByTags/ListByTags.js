@@ -4,6 +4,7 @@ import React, { Component } from "react";
 import PlayListContext from "../../contexts/PlayListContext";
 import { Link } from "react-router-dom";
 import "./ListByTags.css";
+import Fire from '../Fire/Fire';
 
 export class ListByTags extends Component {
   static contextType = PlayListContext;
@@ -49,8 +50,10 @@ export class ListByTags extends Component {
         return (
           <div key={Math.random()} className="listItem filtered">
             <Link to={`/list/${list.id}`}>
-
+            <div className="card-title">
               <h4 className='filteredListName'>{list.name}</h4>
+              {list.on_fire > 0 ? <Fire/> : null}
+            </div>
             </Link>
             <p className='filteredListTag'>{list.tags}</p>
           </div>

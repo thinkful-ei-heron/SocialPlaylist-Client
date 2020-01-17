@@ -45,14 +45,15 @@
     color:white;
 }
 .filteredListName{
+    display: inline;
     color: var(--color-body);
     cursor: pointer;
     margin-bottom: 2%;
+    padding: 5px;
 }
 .filteredListTag{
     color: var(--color-darkMid);
     cursor: pointer;
     margin-top: 0;
 }
-
 }
