@@ -5,13 +5,15 @@ import PlayListContext from '../../contexts/PlayListContext';
 import { Link } from 'react-router-dom';
 import TextInput from '../Form/TextInput';
 import './ListByTags.css';
+import AutoComplete from '../AutoComplete/AutoComplete'
 
 export class ListByTags extends Component {
   static contextType = PlayListContext;
   state = {
     lists: [],
     filter: '',
-    filteredList: []
+    filteredList: [],
+    input: ''
   };
 
   handleFilter = (ev) => {
@@ -39,12 +41,12 @@ export class ListByTags extends Component {
       });
     }
     this.setState({
-      filteredList: [...newList]
+      filteredList: [...newList],
     });
   };
 
   renderFilteredList = () => {
-    if (this.state.filteredList.length == 0) {
+    if (this.state.filteredList.length === 0) {
       return this.props.lists.map((list) => {
         return (
           <div key={Math.random()} className="listItem filtered">
@@ -69,12 +71,30 @@ export class ListByTags extends Component {
     }
   };
 
+  // filterInput() {
+  //   let input, filter, txtValue;
+  //   input = document.getElementById('tags');
+  //   filter = input.value.toUpperCase();
+
+  //   for(i = 0; i < tags.length; i++) {
+  //     a = tags[i].getElebmentsByTagName('a') [0];
+  //     txtValue = a.textContent || a.innerText;
+  //     if(txtValue.toUpperCase().indextOf(filter) > -1) {
+  //       tags[i].style.display = '';
+  //     } else {
+  //       tags[i].style.display = 'none';
+  //     }
+  //   }
+  // }
+  
+
   render() {
     return (
       <section>
         <form onChange={this.handleFilter} id="filterForm">
           <h2 className="filterFormTitle">Browse All Lists</h2>
           <div className="filterButtonContainer">
+          <AutoComplete />
             <TextInput
               label="Hashtag"
               attr={{
