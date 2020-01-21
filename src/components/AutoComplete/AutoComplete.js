@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import './App.css';
 import PropTypes from 'prop-types';
-// import ListByTags from '../ListByTags/ListByTags';
+import ListByTags from '../ListByTags/ListByTags';
 import '../ListByTags/ListByTags.css';
 // import Fragment from 'react-dot-fragment'
 
@@ -29,7 +29,7 @@ export class AutoComplete extends Component {
     const { tags } = this.props;
     const userInput = e.currentTarget.value;
 
-    const filteredTags = tags.filter(
+    const filteredTags = this.props.filter(
       (tags) => tags.toLowerCase().indexOf(userInput.toLowerCase()) > -1
     );
 
