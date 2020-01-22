@@ -29,7 +29,7 @@ export class AutoComplete extends Component {
     const { tags } = this.props;
     const userInput = e.currentTarget.value;
 
-    const filteredTags = this.props.filter(
+    const filteredTags = tags.filter(
       (tags) => tags.toLowerCase().indexOf(userInput.toLowerCase()) > -1
     );
 
