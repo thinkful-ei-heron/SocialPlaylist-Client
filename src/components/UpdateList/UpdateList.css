@@ -27,6 +27,16 @@ label span {
   text-align: left;
   text-overflow: none;
 }
+#root > div > main > form > div:nth-child(6) > div > div > div {
+  background-color: var(--color-midColor);
+}
+.updatePlaylistForm > div:nth-child(5) > div {
+  /*Copied selector from inspector element, this is  */
+  border-radius: 5px;
+  background-color: var(--color-midColor);
+  /* background-color: var(--color-midColor);
+} */
+}
 
 .updateListForm {
   color: white;
@@ -62,9 +72,12 @@ a.can-button {
   margin: 10px 0 10px 15px;
 }
 
-.registerForm button{
+.registerForm button {
   font-size: 20px;
   color: white;
+}
+#updateList-isPublic-checkbox {
+  display: block;
 }
 
 .sav-button:hover,

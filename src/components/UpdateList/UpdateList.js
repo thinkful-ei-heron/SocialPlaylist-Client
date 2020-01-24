@@ -189,7 +189,7 @@ class UpdateList extends Component {
     const list_id = parseInt(this.props.match.params.id);
     this.setState({ redirectToReferrer: true });
     //const { name, tags, city, state, description, is_public } = this.state;
-    console.log('handleSubmit what it got is =>', this.state);
+    // console.log('handleSubmit what it got is =>', this.state);
     let obj = {
       name: this.state.name.value,
       tags: this.state.tags.value,
@@ -244,7 +244,6 @@ class UpdateList extends Component {
                 name="state"
                 label="State"
                 value={this.state.state.value}
-                helperText="Choose your State"
                 onChange={this.onSelectStateChange}
                 options={this.generateStateOptions()}
                 required
@@ -254,7 +253,6 @@ class UpdateList extends Component {
               <Select
                 id="updateList-city-input"
                 name="city"
-                helperText="Choose your City"
                 value={this.state.city.value}
                 label="City"
                 className="location-city"
@@ -269,6 +267,7 @@ class UpdateList extends Component {
                   id: 'updateList-desc-input',
                   name: 'address',
                   value: this.state.description.value,
+                  multiline: true,
                   onChange: (ev) => this.updateDesc(ev.target.value),
                   label: 'Description'
                 }}

@@ -1,20 +1,23 @@
 .newPlaylistForm {
   color: white;
-  background-color: rgba(128, 128, 128, 0.404);
+  background-color: var(--grey-2);
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 50vw;
+  
   min-width: 300px;
   max-width: 400px;
 }
-#root > div > main > section > form > div:nth-child(6) > div {
+
+.newPlaylistForm > div:nth-child(6) > div {
   /*Copied selector from inspector element, this is  */
   border-radius: 5px;
   background-color: var(--color-midColor);
+  /* background-color: var(--color-midColor);
+} */
 }
-
 
 #newPlaylist-name-input,
 #newPlaylist-city-input,
@@ -60,6 +63,12 @@
   font-size: 1rem;
   margin: 0;
 }
-.privateListText{
+.privateListText {
   color: white;
+}
+.newPlaylistSubmitButton{
+  font-size: 1.5rem;
+}
+.MuiSwitch-root{
+  margin-bottom: 5%;
 }

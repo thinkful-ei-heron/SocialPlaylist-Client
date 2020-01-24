@@ -65,7 +65,7 @@ class NewPlaylistForm extends Component {
     let is_public = document.getElementsByName('is_public')[0].value;
     let tags = document.getElementsByName('tags')[0].value;
     let description = this.state.description;
-    console.log(description);
+    // console.log(description);
     ListsApiService.postLists({
       name: name,
       city: city,
@@ -195,7 +195,7 @@ class NewPlaylistForm extends Component {
           />
         </div>
         <footer className="signupBtnLink">
-          <Button type="submit">Submit</Button> <br />{' '}
+          <Button type="submit" className='newPlaylistSubmitButton'>Submit</Button> <br />{' '}
         </footer>
       </form>
     );

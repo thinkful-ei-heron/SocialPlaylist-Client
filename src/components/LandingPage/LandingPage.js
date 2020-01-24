@@ -25,7 +25,7 @@ class LandingPage extends Component {
   componentDidMount() {
     fetch(`${config.API_ENDPOINT}`)
       .then((x) => x.json())
-      .then((res) => console.log(res));
+      .then((res) => console.log());
   }
   handleWindowSizeChange = () => {
     this.setState({ width: window.innerWidth });
@@ -57,6 +57,7 @@ class LandingPage extends Component {
 
         <section className="descContainer">
           <p className="descBody">
+<<<<<<< HEAD
             Visiting a new city and not sure what to do? Live List is where to go to get 
             in the know with the locals.  Find out what's going on in a city by connecting 
             with the people who know best.  Search 'Hot Lists' for the best options for food, 
@@ -71,6 +72,14 @@ class LandingPage extends Component {
             playlists. Like a playlist of the city. Create your own playlist and
             share with your followers. */}
          
+=======
+            Visiting a new city and not sure what to do? <em className="duke">Live List</em> is where to go to get 
+            in the know with the <b>locals</b>.  Find out what's going on in a city by connecting 
+            with the people who know best.  Search <em className="duke">'Hot Lists'</em> for the best options for food, 
+            drinks, dancing, and more. Live List provides you with customizable lists from 
+            users who have the inside track on whats going on in their cities. </p>
+            <h2 className="kicker">Live like the locals with <em className="duke">LIVE LIST!</em></h2>
+>>>>>>> f3a1efcd3c83280658a504f0558b0982b7a3f751
           <div>{this.renderLoginForm()}</div>
         </section>
       </>
