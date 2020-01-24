@@ -61,9 +61,9 @@ class LandingPage extends Component {
           <p className="descBody">
             Visiting a new city and not sure what to do? Live List is where to go to get 
             in the know with the locals.  Find out what's going on in a city by connecting 
-            with the people who know best.  Live List provides you with customizable lists from 
-            users who have the inside track on whats going on in their cities.  Search 'Hot Lists'
-            for the best options for entertainment in an unfamiliar city.  </p>
+            with the people who know best.  Search 'Hot Lists' for the best options for food, 
+            drinks, dancing, and more. Live List provides you with customizable lists from 
+            users who have the inside track on whats going on in their cities. </p>
             
             <h2>Live like the locals with LIVE LIST!</h2>
             {/* Social Playlist solves the problem of not knowing what to do when
