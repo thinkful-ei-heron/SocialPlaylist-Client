@@ -2,7 +2,7 @@
   overflow: scroll;
 }
 .userList-section {
-  margin-top: 20%;
+  margin-top: 5%;
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -15,15 +15,20 @@
 .display-user {
   display: flex;
   flex-direction: row;
-  overflow: auto;
   white-space: nowrap;
   padding: 1.5rem 0;
 }
 .myList-title {
-  color: var(--color-highlight);
+  margin: 1vh 0 0 0;
+  font-family: 'Cantarell';
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  background: var(--purp-pink);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   align-self: flex-start;
 }
-.listItem {
+/* .listItem {
   text-decoration: none;
   min-width: 200px;
   background-color: white;
@@ -37,40 +42,50 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
+} */
 .userListItem {
   max-width: 100px;
 }
 .users {
-  padding-bottom: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 #newPlaylistButton {
-  width: 50%;
-  max-width: 150px;
   padding: 0.25rem 0.5rem;
   align-self: flex-end;
   margin-top: 5%;
-  border-radius: 25px;
-  color: white;
+  color: var(--white-1);
   font-size: 1rem;
+  margin: 0 5% 0 0;
 }
+
+#newPlayListButton:hover,
+#newPlayListButton:active {
+  background: var(--purp-pink);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
 .newPlayListButtonContainer {
   display: flex;
   justify-content: flex-end;
 }
+
 .listItemName {
   color: #4267b2;
 }
 .userListTitle {
-  color: var(--color-body);
   cursor: pointer;
   font-weight: bold;
-  margin-bottom: 0;
-  margin-top: 5%;
-}
-.userListTitle::visited {
-  color: var(--color-body);
+  /* margin-bottom: 0;
+  margin-top: 5%; */
+  margin: 0;
+  padding-right: 1rem;
 }
 
 .btn-list {
@@ -82,20 +97,54 @@
   margin-top: 5%;
   cursor: pointer;
 }
+
+.userlist-btn {
+  font-size: 1rem;
+  background: transparent;
+  border: 0;
+  margin-top: 0.5rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  visibility: hidden;
+}
+
+.userlist-btn .timesIcon:hover {
+  font-weight: 900;
+  color: blue;
+  cursor: pointer;
+}
+
+.userlist-btn .editIcon:hover {
+  font-weight: 900;
+  color: blue;
+  cursor: pointer;
+}
+
+.timesIcon {
+  font-size: 1.7rem;
+  border: transparent;
+  color: #ff5033;
+  margin-bottom: -3px;
+}
+
+.editIcon {
+  font-size: 1.5rem;
+  border: transparent;
+  color: black;
+}
+
+.listItem:hover .userlist-btn {
+  visibility: visible;
+}
+
+
 @media only screen and (min-width: 500px) {
-  /* For desktop: */
   .userList-section {
-    margin-top: 10%;
+    margin-top: 5%;
     padding: 0.4rem 0.8rem;
   }
+
   #newPlaylistButton {
-    width: 50%;
-    max-width: 150px;
-    padding: 0.25rem 0.5rem;
-    align-self: flex-end;
-    margin-top: 0;
-    border-radius: 25px;
-    color: white;
-    font-size: 1rem;
+    display: block;
   }
 }

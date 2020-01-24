@@ -18,7 +18,8 @@ export class UserDashboardRoute extends Component {
     spots: [],
     loading: false,
     checkLength: 0,
-    likedChange: false
+    likedChange: false,
+    userCity:''
   };
 
   static defaultProps = {
@@ -36,12 +37,12 @@ export class UserDashboardRoute extends Component {
 
 
   handleDeletePlaylist = (playId) => {
+    console.log('i heard that delete call')
     ListsApiService.getSpotsById(playId)
       .then((data) => {
         if (data.spots.length === 0) {
           ListApiService.deleteLists(playId)
             .then( () => {
-              console.log(`Record '${playId}' deleted`)
               const newUserList = this.state.userList.filter(userlist => userlist.id !== playId)
               
               //added to update setPlaylist context
@@ -53,7 +54,6 @@ export class UserDashboardRoute extends Component {
               })   
             })
         }else {
-          console.log('list cannot be deleted')
           return this.setState({checkLength: data.spots.length})
         }
       })
@@ -68,7 +68,9 @@ export class UserDashboardRoute extends Component {
     });
     ListApiService.getUsersLists()
       .then((data) => {
-        console.log('data from the server on userList call', data);
+        //this context setPlaylist will pass it to playlist
+        this.context.setPlaylist(data)
+        console.log('this is the data from the getUserListApi call =>', data)
         this.setState({
           userList: data
         });
@@ -77,7 +79,7 @@ export class UserDashboardRoute extends Component {
 
     ListApiService.getLists()
       .then((data) => {
-        console.log('this data from getLists call', data);
+
         this.setState({
           lists: data
         });
@@ -124,7 +126,6 @@ export class UserDashboardRoute extends Component {
               allLists={this.state.lists}
             />
             <ListByTags lists={this.state.lists} />
-
           </PlayListContext.Provider>
         </div>
       );
@@ -132,7 +133,7 @@ export class UserDashboardRoute extends Component {
   };
 
   render() {
-
+    // console.log('playlist', this.context.playlist);
     return <div>{this.renderWithLoading()}</div>;
   }
 }

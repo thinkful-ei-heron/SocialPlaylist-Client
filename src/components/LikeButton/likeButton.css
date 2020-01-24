@@ -1,3 +1,10 @@
+.likeButtonContainer{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  align-self: flex-start;
+}
 .notLikedIcon{
   width: 30px;
   height: auto;
@@ -5,5 +12,9 @@
 .likedIcon{
   width: 30px;
   height: auto;
-  background-color: rgba(0, 0, 0, 0.733);
+}
+.likes{
+  color: var(--color-body);
+  font-size: 1.25rem;
+  margin: 0;
 }

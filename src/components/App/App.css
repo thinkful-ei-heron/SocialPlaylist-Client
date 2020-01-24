@@ -1,32 +1,53 @@
+@import url('https://fonts.googleapis.com/css?family=Cantarell:700i|Seymour+One&display=swap');
 :root{
   --color-background: #EBEBEB;
-  --color-midColor: #D2D9D9;
-  --color-highlight:#1A3BEB;
+  --color-midColor: var(--grey-2);
+  --color-highlight: linear-gradient(to right, var(--purp), var(--pink));
   --color-body:#21201f;
   --color-newButton:#4caf50;
   --color-darkMid:#817C7C;
+  --gradient-background: linear-gradient(to right, white, var(--color-midColor));
+  --purp-pink: linear-gradient(to right, var(--purp), var(--pink));
+  --purp: #ec01bc;
+  --pink: #d91a68;
+  --white-1: #d1d1d1;
+  --grey-1: #4f546a;
+  --grey-2: #2a2b2e;
+  --grey-3: #202124;
 }
-*{
+
+* {
   box-sizing: border-box;
 }
 
 .App {
+  top:0;
   text-align: center;
 }
 
 body {
-  background-color: var(--color-midColor);
+  background-image: url('/background.png');
+  background-color: var(--grey-3);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center top;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: 1rem;
-  color: var(--color-midColor);
-  padding-left: 5%;
-  padding-right: 5%;
+/*  color: var(--color-midColor); */
+  padding: 0 5%;
 }
+
 a{
   text-decoration: none;
-  color: var(--color-background);
+}
+
+/* Transition to larger screen */
+@media only screen and (min-width: 700px) {
+  body{
+    background-image: url('/background.png');
+  }
 }

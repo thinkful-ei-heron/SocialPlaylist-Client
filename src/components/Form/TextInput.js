@@ -7,7 +7,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     '& > *': {
       margin: theme.spacing(0.6),
-      width: 200
+      width: 200,
     }
   }
 }));
@@ -16,14 +16,14 @@ export default function BasicTextField(props) {
   const classes = useStyles();
   let { label, attr } = props;
   return (
-    <form className={classes.root} noValidate autoComplete="on">
+    <div className={classes.root}>
       <TextField
         id="outlined-basic"
         label={label}
         {...attr}
         variant="outlined"
       />
-    </form>
+    </div>
   );
 }
 

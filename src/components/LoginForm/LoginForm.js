@@ -15,8 +15,6 @@ class LoginForm extends Component {
 
   state = { error: null };
 
-  //firstInput = React.createRef();
-
   handleSubmit = (ev) => {
     ev.preventDefault();
     let username = document.getElementsByName('username')[0];
@@ -39,16 +37,12 @@ class LoginForm extends Component {
       });
   };
 
-  // componentDidMount() {
-  //   this.firstInput.current.focus();
-  // }
-
   render() {
     const { error } = this.state;
     return (
       <form onSubmit={this.handleSubmit} className="loginForm">
         <div role="alert">{error && <p>{error}</p>}</div>
-        <h4 className="loginTitle">Log in</h4>
+        <h4 className="loginTitle">Login</h4>
         <div>
           <TextInput
             label="Username"
@@ -56,7 +50,8 @@ class LoginForm extends Component {
               id: 'login-username-input',
               name: 'username',
               required: true,
-              type: 'text'
+              type: 'text',
+              autoComplete: 'username'
             }}
           />
         </div>
@@ -68,15 +63,16 @@ class LoginForm extends Component {
               id: 'login-password-input',
               name: 'password',
               required: true,
-              type: 'password'
+              type: 'password',
+              autoComplete: 'current-password'
             }}
           />
         </div>
-        <Button>
+        <Button className="reg-button">
           {' '}
           <Link to="/register">Sign up</Link>
         </Button>
-        <Button type="submit">Login</Button>
+        <Button className="log-button" type="submit">Login</Button>
       </form>
     );
   }
