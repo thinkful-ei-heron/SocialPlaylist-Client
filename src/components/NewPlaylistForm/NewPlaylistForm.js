@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Required, Label } from '../Form/Form';
 import ListsApiService from '../../services/lists-api-service';
 import SwitchComp from '../Form/Switch';
 import possibleLocations from '../Assets/possibleLocations';
@@ -9,10 +8,6 @@ import './NewPlaylistForm.css';
 import TextInput from '../Form/TextInput';
 import Select from '../Form/Select';
 import TextField from '@material-ui/core/TextField';
-
-// TODO - clean the input .toLowerCase and _ for spaces in the city
-// TODO - clean the tags, must have space between #
-// TODO - incorporate the API call to POST the new list
 
 class NewPlaylistForm extends Component {
   static defaultProps = {
@@ -65,7 +60,6 @@ class NewPlaylistForm extends Component {
     let is_public = document.getElementsByName('is_public')[0].value;
     let tags = document.getElementsByName('tags')[0].value;
     let description = this.state.description;
-    // console.log(description);
     ListsApiService.postLists({
       name: name,
       city: city,
@@ -88,8 +82,6 @@ class NewPlaylistForm extends Component {
       <form onSubmit={this.handleSubmit} className="newPlaylistForm">
         <div role="alert">{error && <p>{error}</p>}</div>
         <div>
-
-       
           <TextInput
             attr={{ id: 'newPlaylist-name-input', name: 'name', label: 'Name' }}
           />

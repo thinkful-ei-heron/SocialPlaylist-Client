@@ -1,6 +1,5 @@
 import config from '../config'
 import TokenService from './token-service'
-import { taggedTemplateExpression } from '@babel/types'
 
 const SpotsApiService = {
     postSpots(spot) {

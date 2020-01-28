@@ -172,7 +172,6 @@ class UpdateList extends Component {
     // let editPlaylist = playList.find(
     //   (play) => parseInt(play.id) === parseInt(list_id)
     // );
-    // console.log(editPlaylist);
     // this.setState({
     //   name: { value: editPlaylist.name, touched: false },
     //   tags: { value: editPlaylist.tags, touched: false },
@@ -188,8 +187,6 @@ class UpdateList extends Component {
     ev.preventDefault();
     const list_id = parseInt(this.props.match.params.id);
     this.setState({ redirectToReferrer: true });
-    //const { name, tags, city, state, description, is_public } = this.state;
-    // console.log('handleSubmit what it got is =>', this.state);
     let obj = {
       name: this.state.name.value,
       tags: this.state.tags.value,

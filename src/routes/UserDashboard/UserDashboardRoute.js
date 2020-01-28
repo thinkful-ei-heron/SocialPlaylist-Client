@@ -37,7 +37,6 @@ export class UserDashboardRoute extends Component {
 
 
   handleDeletePlaylist = (playId) => {
-    // console.log('i heard that delete call')
     ListsApiService.getSpotsById(playId)
       .then((data) => {
         if (data.spots.length === 0) {
@@ -70,7 +69,7 @@ export class UserDashboardRoute extends Component {
       .then((data) => {
         //this context setPlaylist will pass it to playlist
         this.context.setPlaylist(data)
-        // console.log('this is the data from the getUserListApi call =>', data)
+
         this.setState({
           userList: data
         });
@@ -133,7 +132,6 @@ export class UserDashboardRoute extends Component {
   };
 
   render() {
-    // console.log('playlist', this.context.playlist);
     return <div>{this.renderWithLoading()}</div>;
   }
 }

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import ScrollContainer from "react-indiana-drag-scroll";
 import "./HotIn.css";
-import LikeButton from '../LikeButton/likeButton';
 import ListsApiService from "../../services/lists-api-service";
 import List from '../List/List';
 import Select from '../Form/Select';

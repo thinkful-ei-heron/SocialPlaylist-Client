@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Label } from '../Form/Form';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Button from '../Button/Button';
 import SpotsApiService from '../../services/spots-api-service';
 import PlayListContext from '../../contexts/PlayListContext';
