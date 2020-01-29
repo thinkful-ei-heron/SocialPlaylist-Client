@@ -131,7 +131,7 @@ class NewPlaylistForm extends Component {
         </div>
         <div>
           <label>
-            <span className='privateListText'>Make your list private ?</span>
+            <span className="privateListText">Make your list private ?</span>
           </label>
           <SwitchComp
             id="newPlayList-isPublic-checkbox"
@@ -142,7 +142,10 @@ class NewPlaylistForm extends Component {
           />
         </div>
         <footer className="signupBtnLink">
-          <Button type="submit" className='newPlaylistSubmitButton'>Submit</Button> <br />{' '}
+          <Button type="submit" className="newPlaylistSubmitButton">
+            Submit
+          </Button>{' '}
+          <br />{' '}
         </footer>
       </form>
     );

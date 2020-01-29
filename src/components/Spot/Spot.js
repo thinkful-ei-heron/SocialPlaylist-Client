@@ -1,10 +1,10 @@
 /* eslint-disable eqeqeq */
 /* eslint-disable no-unused-expressions */
 /* eslint-disable no-lone-blocks */
-import React, { Component } from "react";
-import Button from "../Button/Button";
-import PlayListContext from "../../contexts/PlayListContext"
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+import Button from '../Button/Button';
+import PlayListContext from '../../contexts/PlayListContext';
+import { Link } from 'react-router-dom';
 import './Spot.css';
 
 export class Spot extends Component {
@@ -18,12 +18,12 @@ export class Spot extends Component {
     match: {
       params: {}
     }
-  }
+  };
 
   handleSpotClick = () => {
-    this.context.setSpotId(this.props.sid)
-    this.context.setListId(this.props.lid)
-  }
+    this.context.setSpotId(this.props.sid);
+    this.context.setListId(this.props.lid);
+  };
   renderUserListId = () => {
     if(this.props.usersListIds.length > 0){
       return this.props.usersListIds.map(lists => {
@@ -31,35 +31,35 @@ export class Spot extends Component {
         // 'the list Id of what list we are in', lists
         if(lists == parseInt(this.props.lid)) { 
           return (
-            <div className ='spot-buttons'>
-                <Button 
-                  id='deleteSpotButton'
-                  onClick={ () => this.props.handleDeleteSpot(this.props.sid)}>Delete</Button>
-                <Button id='editSpotButton'>
-                <Link
-                    to= {`/updateSpot/${this.props.sid}`}
-                  >
-                    Edit
-                  </Link>
+            <div className="spot-buttons" key={this.props.lid}>
+              <Button
+                key={index + 1}
+                id="deleteSpotButton"
+                onClick={() => this.props.handleDeleteSpot(this.props.sid)}>
+                Delete
+              </Button>
+              <Button id="editSpotButton" key={index + 2}>
+                <Link to={`/updateSpot/${this.props.sid}`}>Edit</Link>
               </Button>
             </div>
           );
-        } 
-      })
+        } else return <div key={index}></div>;
+      });
     }
-    
-  }
+  };
 
   render() {
     return (
-      
-      <div className="spotItem"  onClick={this.handleSpotClick}>
-          <h2 className='spotName'>{this.props.name}</h2>
-          <p className='spotInfo'>{this.props.address}</p>
-          <p className='spotInfo'>{this.props.city}</p>
-          <p className='spotInfo'>{this.props.state}</p>
-          <p className='spotTags'>{this.props.tags}</p> 
-          {this.renderUserListId()}
+      <div
+        className="spotItem"
+        onClick={this.handleSpotClick}
+        key={Math.random()}>
+        <h2 className="spotName">{this.props.name}</h2>
+        <p className="spotInfo">{this.props.address}</p>
+        <p className="spotInfo">{this.props.city}</p>
+        <p className="spotInfo">{this.props.state}</p>
+        <p className="spotTags">{this.props.tags}</p>
+        {this.renderUserListId()}
       </div>
     );
   }

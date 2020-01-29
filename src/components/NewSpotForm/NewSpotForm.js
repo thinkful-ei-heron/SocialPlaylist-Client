@@ -145,10 +145,13 @@ class NewSpotForm extends Component {
           />
         </div>
         <footer className="newSpotButtons">
-          <Button className='newSpotCancelButton'>
+          <Button className="newSpotCancelButton">
             <Link to={`/list/${this.context.listid}`}>Cancel</Link>
           </Button>
-          <Button  className='newSpotSaveButton' type="submit">Save</Button> <br />{' '}
+          <Button className="newSpotSaveButton" type="submit">
+            Save
+          </Button>{' '}
+          <br />{' '}
         </footer>
       </form>
     );
